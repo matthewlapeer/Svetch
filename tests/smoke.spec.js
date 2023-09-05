@@ -37,7 +37,7 @@ test('download button', async ({ page }) => {
   await expect(page.getByRole('button', { name: 'Save' })).toBeVisible();
 });
 
-test.only('sign in button', async ({ page, baseURL }) => {
+test('sign in button', async ({ page, baseURL }) => {
   test.setTimeout(3000)
   await page.goto('/');
 
