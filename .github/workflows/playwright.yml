@@ -26,7 +26,7 @@ jobs:
       env:
         USERNAME: ${{ secrets.USERNAME }}
         PASSWORD: ${{ secrets.PASSWORD }}
-      run: npm run test
+      run: USERNAME=${{ secrets.USERNAME }} PASSWORD=${{ secrets.PASSWORD }} npm run test
     - uses: actions/upload-artifact@v3
       if: always()
       with:
