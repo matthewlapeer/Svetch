@@ -47,7 +47,7 @@ test('sign in button', async ({ page, baseURL }) => {
   console.log(page.url())
   // Wait for the redirection to login route.
   await page.waitForURL('https://github.com/login**');
-  console.log('username', env.USERNAME == 'lapeerm@umich.edu')
+  console.log('env', env)
   // If prompted for GitHub credentials (use url to determine if being prompted)
   if (page.url().match(/return_to=/)) {
     // Fill the stored username from .env.
