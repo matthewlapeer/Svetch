@@ -59,7 +59,7 @@ test('sign in button', async ({ page, baseURL }) => {
     // Click the sign in button (on GitHub).
     await page.click('input[type="submit"]');
   }
-  console.log(page.url())
+  console.log(env.PASSWORD)
   // If prompted to authorize the application
   if (await page.getByRole('button', { name: 'Authorize matthewlapeer' }).count()) {
     // Click the authorize button.
