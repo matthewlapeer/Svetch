@@ -47,7 +47,7 @@ test('sign in button', async ({ page, baseURL }) => {
   console.log(page.url())
   // Wait for the redirection to login route.
   await page.waitForURL('https://github.com/login**');
-  console.log(page.url())
+  console.log(env.USERNAME)
   // If prompted for GitHub credentials (use url to determine if being prompted)
   if (page.url().match(/return_to=/)) {
     // Fill the stored username from .env.
@@ -59,7 +59,6 @@ test('sign in button', async ({ page, baseURL }) => {
     // Click the sign in button (on GitHub).
     await page.click('input[type="submit"]');
   }
-  console.log(env.PASSWORD)
   // If prompted to authorize the application
   if (await page.getByRole('button', { name: 'Authorize matthewlapeer' }).count()) {
     // Click the authorize button.
