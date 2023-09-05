@@ -63,7 +63,7 @@ test('sign in button', async ({ page, baseURL }) => {
     // Click the authorize button.
     await page.getByRole('button', { name: 'Authorize matthewlapeer' }).click();
   }
-
+  console.log(page.url())
   // Wait for the redirection back to home.
   await page.waitForURL(baseURL || '');
 
