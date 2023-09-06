@@ -24,10 +24,7 @@ export async function handle({ event, resolve }) {
   response.headers.append('set-cookie', `user=${locals.user || ''};path=/; HttpOnly`);
 
   // Add the session cookie to the response
-  response.headers.append(
-    'set-cookie',
-    `session_id=${locals.sessionId || uuidv4()};path=/; HttpOnly; sameSite=lax`
-  );
+  response.headers.append('set-cookie', `session_id=${locals.sessionId || uuidv4()};path=/; HttpOnly; sameSite=lax`);
 
   // Return the response object
   return response;
@@ -44,6 +41,6 @@ export async function getSession({ locals }) {
   // Return user and state values from request event object
   return {
     user: locals.user,
-    state: locals.state
+    state: locals.state,
   };
 }

@@ -27,7 +27,9 @@ export async function get({ url }) {
   const OAuthState = `state=${uuidv4()}`;
 
   // Construct search params string from repoName, OAuthScope and OAuthState
-  const redirectParams = `${repoName ? `?repoName=${repoName}` : ''}&${OAuthScope}&${OAuthState}`;
+  const redirectParams = `${repoName
+    ? `?repoName=${repoName}`
+    : ''}&${OAuthScope}&${OAuthState}`;
 
   // Construct complete redirectURL
   const redirectURL = `${target}?client_id=${clientID}&redirect_uri=${redirectURI}/${redirectParams}`;
@@ -36,7 +38,7 @@ export async function get({ url }) {
     status: 302,
     headers: {
       location: redirectURL,
-      'set-cookie': `state=${state};path=/; HttpOnly`
-    }
+      'set-cookie': `state=${state};path=/; HttpOnly`,
+    },
   };
 }
