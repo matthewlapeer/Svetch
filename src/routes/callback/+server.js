@@ -58,7 +58,7 @@ export async function GET({ url, cookies }) {
   if (repoName) {
     await axios({
       method: 'post',
-      url: 'http://localhost:5173/exportProject',
+      url: 'https://app.svetch.vercel/exportProject',
       data: {
         token,
         user,

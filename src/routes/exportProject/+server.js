@@ -113,7 +113,7 @@ export async function POST({ request }) {
 
     // Get the static project files
     const projectFiles = await axios
-      .get('http://localhost:5173/api/projectFiles')
+      .get('https://app.svetch.vercel/api/projectFiles')
       .then(({ data }) => data)
       .then(({ files }) => files);
 
